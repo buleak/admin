@@ -1,0 +1,8 @@
+@import '../../index.scss';
+
+.chatRoom {
+    @include flex($col:space-between);
+    width: 900px;
+    height: 700px;
+    border: 1px solid $g4;
+}

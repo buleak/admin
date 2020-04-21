@@ -1,0 +1,77 @@
+@import '../../index.scss';
+
+#login {
+    width: 100vw;
+    height: 100vh;
+    background: url('../../resources/imgs/bg-1.jpg') 0 0/cover repeat;
+
+    .login {
+        @include flex(flex-start);
+        width: 100vw;
+        margin: 0 !important;
+        background: rgba(48, 48, 49, 0.3);
+
+        .logo {
+            width: 35px;
+            height: 35px;
+            margin: 0px 15px;
+        }
+        h1 {
+            @include font(24px);
+            margin: 10px 0;
+        }
+    }
+
+    .loginform {
+        @include flex($direction: column);
+        width: 400px;
+        height: 300px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.8); // inset 左 下 模糊区间 模糊距离 颜色 内阴影
+
+        .form {
+            width: 300px;
+            height: 400px;
+            position: relative;
+
+            .item {
+                display: block;
+                margin-bottom: 10px;
+            }
+            
+            button {
+                position: absolute;
+                left: 50%;
+                bottom: 10px;
+                transform: translateX(-50%);
+            }
+        }
+
+        .toggleform {
+            @include flex;
+            width: 180px;
+            color: #000;
+            font-size: 14px;
+        }
+    }
+}
+
+#components-form-demo-normal-login {
+    .loginForm {
+        max-width: 300px;
+    }
+
+    .loginFormForgot {
+        float: right;
+    }
+
+    .ant-col-rtl .loginFormForgot {
+        float: left;
+    }
+
+    .loginFormButton {
+        width: 100%;
+    }
+}

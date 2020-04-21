@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+#notFound {
+    width: 100vw;
+    height: 100vh;
+    @include flex($direction: column);
+    img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        border: 1px solid #000;
+        filter: drop-shadow(3px 3px 1px rgba(0,0,0,0.3));
+    }
+    p {
+        @include font($size:30px, $bold:600);
+        text-shadow: 3px 3px 1px rgba(0,0,0,0.3);
+    }
+}

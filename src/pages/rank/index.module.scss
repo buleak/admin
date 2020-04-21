@@ -1,0 +1,63 @@
+@import '../../index.scss';
+
+// 点击按钮特效
+.btn {
+    width: 50px;
+    height: 30px;
+    color: $g8;
+    margin: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: $g2;
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: 3px 3px 3px rgba($color: $b, $alpha: 0.1),
+        -3px -3px 3px rgba($color: $w, $alpha: 0.5);
+
+    span {
+        font-size: 16px;
+        transition: color 0.2s ease-out;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 rgba($color: $b, $alpha: 0.1),
+            0 0 0 rgba($color: $w, $alpha: 0.5),
+            inset 5px 5px 10px 1px rgba($color: $b, $alpha: 0.1),
+            inset -5px -5px 10px 1px rgba($color: $w, $alpha: 0.5);
+
+        span {
+            font-size: 15px;
+            transition: color 0.2s ease-out;
+        }
+    }
+}
+
+.userBox {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    @include flex($col:space-around, $wrap: wrap);
+
+    &::after {
+        content: '';
+        width: 200px;
+        margin: 10px;
+    }
+
+    .userInfo {
+        width: 200px;
+        height: 200px;
+        color: $g8;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background: $g2;
+        @include flex($col:flex-start, $direction: column);
+
+        div,
+        span {
+            margin: 5px;
+        }
+    }
+}

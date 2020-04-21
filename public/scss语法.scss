@@ -1,0 +1,47 @@
+$variable: #f0f0f0; /* 变量：通过 $XXX使用 */
+/*
+    输出格式：
+    1. :nested: 嵌套
+    2. :expanded: 扩展
+    3. :compacr: 紧凑
+    4. :compressed: 压缩
+
+    &：父选择器标识
+    
+    @if：判断
+    @if true {...} @else if true {...} @else {...}
+    
+    @for：循环
+    @for $i from 1 to(through) 3 { to：不包括end值；through：包括end值；
+        .item-#{$i} { width: 2em * $i; }
+    }
+
+    @each：遍历
+    @each $i in a, b, c {
+        .#{$i}-icon {
+            background-image: url('/imgs/#{$i}.png');
+        }
+    }
+
+    @while：循环
+    $i: 6
+    @while $i > 0 {
+        .item-#{$i} {font-size: 20px - $i; }
+        $i: $i - 2;
+    }
+
+    @function：函数
+    $size: 12;
+    @function fn($prop) {
+        @return $prop * 2 + $size;
+    }
+*/
+@mixin flex($horizontal: center, $vertical: center, $wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $vertical;
+    justify-content: $horizontal;
+} /* 混合：通过 @include XXX(a,b,c || a:'a', b:'b1', c:'cc')使用，可传参，默认参数 */
+
+/* 继承：@extend .XX 不仅继承类本身，也继承任何与 类.XX有关的组合选择器的样式。即 .XX .a --> .YY .a */
+

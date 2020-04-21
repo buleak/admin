@@ -1,0 +1,31 @@
+@import '../../index.scss';
+
+#head {
+    width: 100vw;
+    height: 60px;
+    background: $w;
+    border-bottom: 1px solid $g8;
+    @include font(20px);
+    @include flex($row:flex-start);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s;
+    &:hover {
+        background: $g1;
+    }
+    .logo {
+        width: 30px;
+        height: 30px;
+        margin: 15px 20px;
+    }
+    nav {
+        a {
+            margin: 0 10px;
+        }
+        .navActive {
+            color: $b8;
+        }
+    }
+}
